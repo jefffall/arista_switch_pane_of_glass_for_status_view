@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>AristaPaneOfGlass</title>
+    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/arista.svg">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="assets/css/clock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>state machine cat - inpage sample</title>
+
+  <style>
+      body {
+          font-family: sans-serif;
+          margin: 0 auto;
+          max-width: 1200px;
+          line-height: 1.6;
+          font-size: 18px;
+          padding: 0 10px;
+          background-color: #fff;
+      }
+
+      h1,
+      h2,
+      h3 {
+          line-height: 1.2;
+      }
+    </style>
+</head>
+
+<body>
+    <section></section>
+    <div class="container"></div>
+    <h1 class="text-center" style="height: 101px;">Configuration</h1><div><script type="text/x-smcat" src="state-machine-cat/configuration2.smcat" data-direction="left-right" data-dot-graph-attrs="splines=ortho"></script></div>
+    <div class="container" style="height: 264px;">
+        <div class="row" style="height: 395px;"></div>
+        <div id="configdiv">
+            <hr>
+            <div class="row" style="height: 175px;">
+                <div class="col">
+                    <div class="dropdown" id="RemedyOnOff"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="remedy_on_off" type="button">Remedy on/off</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">on</a><a class="dropdown-item" href="#">off</a><a class="dropdown-item" href="#"></a></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown" id="OpenRemedyTicket"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="open_remedy_ticket" type="button">Open Remedy Ticket</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Delay 10 sec</a><a class="dropdown-item" href="#">Delay 20 sec</a><a class="dropdown-item" href="#">Delay 30 sec</a></div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col" style="width: 61px;">
+                    <div class="dropdown" id="alert" type="button"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="alert" type="button">Alert --&gt;</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Delay 10 sec</a><a class="dropdown-item" href="#">Delay 20 sec</a><a class="dropdown-item" href="#">Delay 30 sec</a></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown" id="sendToUdeploy" style="height: 60px;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="send_to_udeploy" type="button">Send to uDeploy --&gt;</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Delay 10 sec</a><a class="dropdown-item" href="#">Delay 20 sec</a><a class="dropdown-item" href="#">Delay 30 sec</a></div>
+                    </div>
+                </div>
+                <div class="col" style="width: 89px;">
+                    <div class="dropdown" id="splunkVerifyFix" type="button"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="splunk_verify_fix" type="button">Splunk Verify Fix --&gt;</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Delay 10 sec</a><a class="dropdown-item" href="#">Delay 20 sec</a><a class="dropdown-item" href="#">Delay 30 sec</a></div>
+                    </div>
+                    <div class="row"></div>
+                </div>
+                <div class="col">
+                    <div class="dropdown" id="passFail" style="height: 175px;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="pass_fail" type="button">Pass/Fail --&gt;</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Delay 10 sec</a><a class="dropdown-item" href="#">Delay 20 sec</a><a class="dropdown-item" href="#">Delay 30 sec</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="height: 40px;">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col">
+                    <div class="dropdown" id="repeatVerifyFix"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="repeat_verify_fix" type="button">Repeat verify fix</button>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">Do not repeat</a><a class="dropdown-item" href="#">repeat once</a><a class="dropdown-item" href="#">repeat twice</a></div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aristaSwitchPullData.js"></script>
+    <script src="assets/js/clock.js"></script>
+    <script src="assets/js/configuration.js"></script>
+    <script src="assets/js/editable_table.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/jquery.tabletojson.js"></script>
+    <script src="assets/js/jsonToTable.js"></script>
+    <script src="assets/js/refreshiframe.js"></script>
+    <script src="assets/js/state-machine-cat-inpage.min.js"></script>
+    <script src="assets/js/xslate.js"></script>
+</body>
+
+</html>

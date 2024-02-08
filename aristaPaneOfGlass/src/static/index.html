@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>AristaPaneOfGlass</title>
+    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/arista.svg">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="assets/css/clock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>state machine cat - inpage sample</title>
+
+  <style>
+      body {
+          font-family: sans-serif;
+          margin: 0 auto;
+          max-width: 1200px;
+          line-height: 1.6;
+          font-size: 18px;
+          padding: 0 10px;
+          background-color: #fff;
+      }
+
+      h1,
+      h2,
+      h3 {
+          line-height: 1.2;
+      }
+    </style>
+</head>
+
+<body>
+    <section style="height: 176px;">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col" style="width: 300px;"><img src="assets/img/Arista_Records-Logo.wine.png" style="margin: 36px;padding: 0px;width: 272px;height: 95px;"></div>
+                <div class="col offset-1" style="width: 300px;height: 62px;">
+                    <div class="time" style="height: 60px;margin: 10px;">
+                        <p id="date">Paragraph</p>
+                        <p id="time">Paragraph</p>
+                    </div>
+                </div>
+                <div class="col"><img src="assets/img/Incident_cycle.png" style="height: 166px;margin: 1px;padding: -9px;width: 168px;"></div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <hr>
+    <section style="height: 640px;">
+        <div class="container" id="mycontainer" style="height: 545px;">
+            <div class="row" style="height: 96px;"></div>
+            <div class="row" style="height: 60px;">
+                <div class="col">
+                    <p id="version">Version:&nbsp;</p>
+                </div>
+                <div class="col">
+                    <p id="uptime">Uptime:&nbsp;</p>
+                </div>
+                <div class="col">
+                    <p id="boottime">Bootime:&nbsp;</p>
+                </div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col">
+                    <p>Switch FQDN and Hostname</p>
+                </div>
+                <div class="col">
+                    <p id="fqdn"></p>
+                </div>
+                <div class="col">
+                    <p id="hostname"></p>
+                </div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col">
+                    <p>Clock</p>
+                </div>
+                <div class="col">
+                    <p id="timezone"></p>
+                </div>
+                <div class="col">
+                    <p id="localtime"></p>
+                </div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col">
+                    <p>NTP clock source</p>
+                </div>
+                <div class="col">
+                    <p id="local"></p>
+                </div>
+                <div class="col">
+                    <p id="status"></p>
+                </div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col" style="height: 60px;">
+                    <p>Nameservers:</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv4_nameservers">IPV4 nameservers:</p>
+                </div>
+                <div class="col" id="ipv6_nameservers" style="height: 60px;">
+                    <p>IPV6 Nameservers</p>
+                </div>
+            </div>
+            <div class="row" style="height: 60px;">
+                <div class="col" style="height: 60px;">
+                    <p>DHCP IPV4</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv4_dhcp_servers">IPV4 dhcp servers:</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv4_active_leases">IPV4 Active Leases</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv4_lease_duration">IPV4 Lease Duration</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="height: 60px;">
+                    <p>DHCP IPV6</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv6_dhcp_servers">IPV6 dhcp servers:</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv6_active_leases">IPV6 Active Leases</p>
+                </div>
+                <div class="col" style="height: 60px;">
+                    <p id="ipv6_lease_duration">IPV6 Lease Duration</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="height: 208px;">
+            <hr>
+            <p class="text-center" style="height: 20px;">Run EOS Commands below:</p>
+            <hr>
+            <div class="row" style="height: 47px;">
+                <div class="col"></div>
+                <div class="col"><button class="btn btn-primary" id="startButton" type="button">Record voice command</button></div>
+                <div class="col"><button class="btn btn-primary" id="stopButton" type="button">Record DONE</button></div>
+                <div class="col"><button class="btn btn-primary" id="playButton" type="button">Play back Command</button>
+                    <div class="row">
+                        <div class="col">
+                            <p id="output"></p>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="height: 70px;text-align: left;">
+                <div class="col"><input type="text" id="eos_command" style="text-align: left;width: 232px;height: 28px;"></div>
+                <div class="col"><textarea id="eos_command_response" style="width: 584px;height: 153px;"></textarea></div>
+                <div class="col"></div>
+            </div>
+            <div class="row" style="height: 181px;">
+                <div class="col"><button class="btn btn-primary" id="send_to_eos" type="button" style="text-align: left;">Send to EOS</button></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <hr>
+            <div class="row" style="height: 21px;">
+                <div class="col">
+                    <p class="font-weight-bolder text-center">EOS Log</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="eos_log" style="height: 329px;"></div>
+        </div>
+    </section>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aristaSwitchPullData.js"></script>
+    <script src="assets/js/clock.js"></script>
+    <script src="assets/js/configuration.js"></script>
+    <script src="assets/js/editable_table.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/jquery.tabletojson.js"></script>
+    <script src="assets/js/jsonToTable.js"></script>
+    <script src="assets/js/refreshiframe.js"></script>
+    <script src="assets/js/state-machine-cat-inpage.min.js"></script>
+    <script src="assets/js/xslate.js"></script>
+</body>
+
+</html>

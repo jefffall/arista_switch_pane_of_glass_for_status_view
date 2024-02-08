@@ -1,0 +1,72 @@
+#body {
+  background-color: white;
+  color: black;
+}
+
+#div1 {
+  transform: translateY(33%);
+}
+
+#time {
+  font-family: 'Nova Mono', monospace;
+  font-size: 3vw;
+  text-align: center;
+  color: red;
+  text-shadow: 0px 0px 30px Black;
+}
+
+#date {
+  font-family: 'Nova Mono', monospace;
+  font-size: 3vw;
+  text-align: center;
+  text-shadow: 0px 0px 20px blue;
+}
+
+@media only screen and (max-width: 500px) {
+  #time {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #date {
+    font-size: 38px;
+  }
+}
+
+/* @media only screen and (max-width: 500px){
+  #time {font-size: 2em;}
+  #date {font-size: 1em;}
+} */
+
+.fixed_header {
+  width: 2000px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.fixed_header tbody {
+  display: block;
+  width: 200%;
+  overflow: auto;
+  height: 100px;
+}
+
+.fixed_header thead tr {
+  display: block;
+}
+
+.fixed_header thead {
+  background: black;
+  color: #fff;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+}
+
+#div1 {
+}
+
